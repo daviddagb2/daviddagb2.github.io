@@ -1,0 +1,15 @@
+.sceneui {
+    position: absolute;
+    z-index: 999;
+    color: red;
+    border: 1px solid cyan;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.sceneui > h1{
+
+}
+
