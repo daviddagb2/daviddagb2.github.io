@@ -17,103 +17,16 @@
        
 
     <!-- Buzz js -->
-    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="js/createjs-2015.11.26.min.js"></script>
 
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Condensed:400,700" rel="stylesheet">
 
 
+    <!-- Game logic -->
+    <script src="js/game/init.js"></script>
 
-    <script>
-
-    /*Var declaration*/
-      //---------------------------------------------
-      AFRAME.registerComponent('log', {
-        schema: {type: 'string'},
-        init: function () {
-          var stringToLog = this.data;
-          console.log(stringToLog);
-        }
-      });
-
-  
-      //--------------------------------------------
-      AFRAME.registerComponent('set-sky', {
-        schema: {default: ''},
-        init() {
-
-          createjs.Sound.registerSound("assets/audio/music.mp3", "x");
-       
-
-          const sky = document.querySelector('a-sky');
-
-          this.el.addEventListener('click', () => {
-            console.log(this.data);
-            sky.setAttribute('src', this.data);
-          });
-
-
-          // MOUSE ENTER EVENT
-          this.el.addEventListener('mouseenter', () => {
-                console.log("enter to enter");
-              /*  var vid = document.getElementById("bgmusic"); 
-                vid.play(); */
-                 createjs.Sound.play("x");
-                
-           });
-
-
-          // MOUSE ENTER EVENT
-          this.el.addEventListener('mouseleave', () => {
-                console.log("leave object");
-                /*var vid = document.getElementById("bgmusic"); 
-                vid.pause(); */
-                createjs.Sound.stop("x");
-          });
-
-        }
-      });
-
-
-
-
-//--------------------------------------------
-      AFRAME.registerComponent('init-anim', {
-        schema: {default: ''},
-        init() {
-
-          createjs.Sound.registerSound("assets/audio/navigate.mp3", "nav");
-          
-          //const sky = document.querySelector('a-sky');
-          
-          var sceneEl = document.querySelector('a-scene');
-          console.log(sceneEl.querySelector('#myTimeline'));
-
-          var mytm = sceneEl.querySelector('#myTimeline');
-          console.log(mytm);
-
-          this.el.addEventListener('click', () => {
-            console.log(this.data);
-            //sky.setAttribute('src', this.data);            
-            createjs.Sound.play("nav");
-          });
-
-          // MOUSE ENTER EVENT
-          this.el.addEventListener('mouseenter', () => {
-                console.log("enter to enter");               
-           });
-
-          // MOUSE ENTER EVENT
-          this.el.addEventListener('mouseleave', () => {
-                console.log("leave object");
-          });
-
-        }
-      });
-
-
-    </script>
-
+    
   </head>
   <body>
 
@@ -125,6 +38,7 @@
     <img id="texture1" src="assets/textures/LavaBowl.jpg">
     <img id="texture2" src="assets/textures/Inundation.jpg">
     <img id="okfigure" src="assets/images/loginvector.png">
+    <img id="skyday" src="assets/images/sky.jpg">
   </a-assets>
 
   <a-assets timeout="10000">
@@ -132,8 +46,12 @@
 
     <a-timeline id="myTimeline">
       
-      <a-timeline-animation select="#sphere1" name="togglevisibleoff"></a-timeline-animation>
-      <a-timeline-animation select="#sphere2" name="togglevisibleoff"></a-timeline-animation>
+      <!--<a-timeline-animation select="#sphere1" name="togglevisibleoff"></a-timeline-animation>
+      <a-timeline-animation select="#sphere2" name="togglevisibleoff"></a-timeline-animation> -->
+
+
+      <a-timeline-animation select="#sky2" name="togglevisibleoff"></a-timeline-animation>
+
 
       <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
       <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
@@ -308,53 +226,39 @@
     </a-timeline-group>
 
     <a-timeline-animation select="#txtWelcomeTo" name="toggleblack"></a-timeline-animation>
-  <a-timeline-animation select="#txtWelcome1" name="toggleblack"></a-timeline-animation>
+    <a-timeline-animation select="#txtWelcome1" name="toggleblack"></a-timeline-animation>
         
+    <a-timeline-animation select="#sky" name="color2"></a-timeline-animation>
 
-<a-timeline-animation select="#sky" name="color2"></a-timeline-animation>
 
 
-        <!-- 
+    <!--ahora si entramos a la escena -->
+    <a-timeline-animation select="#txtWelcome1" name="togglewhite"></a-timeline-animation>
+    <a-timeline-animation select="#sky" name="color"></a-timeline-animation> 
 
-<a-timeline-animation select="#txtWelcome1" name="toggleblack"></a-timeline-animation>
+    <a-timeline-animation select="#sky" name="togglevisibleoff"></a-timeline-animation>
+    <a-timeline-animation select="#txtWelcome1" name="togglefinished"></a-timeline-animation>
+    <a-timeline-animation select="#txtWelcome1" name="togglevisibleoff"></a-timeline-animation>
 
-        <a-timeline-group>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="fadein"></a-timeline-animation>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="scale"></a-timeline-animation>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-      </a-timeline-group>
 
-      <a-timeline-group>
-        <a-timeline-animation select="#text2" name="togglevisible"></a-timeline-animation>
-        <a-timeline-animation select="#text2" name="fadein"></a-timeline-animation>
-        <a-timeline-animation select="#text2" name="textcolor"></a-timeline-animation>
-      </a-timeline-group>
+  <a-timeline-group>
+    <a-timeline-animation select="#sky" name="togglevisibleoff"></a-timeline-animation> 
+    <a-timeline-animation select="#sky2" name="togglevisible"></a-timeline-animation>
+    <a-timeline-animation select="#town01" name="togglevisible"></a-timeline-animation>
+    <a-timeline-animation select="#town01" name="togglevisible"></a-timeline-animation>
+    <a-timeline-animation select="#town01" name="fadein"></a-timeline-animation>
+  </a-timeline-group>
 
-      <a-timeline-animation select="#text2" name="fadeout"></a-timeline-animation>
-      <a-timeline-animation select="#text2" name="togglevisibleoff"></a-timeline-animation>
 
-      <a-timeline-animation select="#text3" name="togglevisible"></a-timeline-animation>
-      <a-timeline-group>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="color"></a-timeline-animation>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="rotate"></a-timeline-animation>
-        <a-timeline-animation select="a-entity[mixin~=box]" name="position"></a-timeline-animation>
-        <a-timeline-animation select="#text3" name="fadein"></a-timeline-animation>
-        <a-timeline-animation select="#text3" name="positionin"></a-timeline-animation>
-      </a-timeline-group>
 
-      <a-timeline-animation select="#text3" name="positionout"></a-timeline-animation>
-      <a-timeline-animation select="#text3" name="togglevisibleoff"></a-timeline-animation>
-
-      <a-timeline-animation select="#text4" name="togglevisible"></a-timeline-animation>
-
-      <a-timeline-group>
-        <a-timeline-animation select="#sky" name="color"></a-timeline-animation>
-        <a-timeline-animation select="#text4" name="fadein"></a-timeline-animation>
-      </a-timeline-group>
-
-      <a-timeline-animation select="#text4" name="fadeout" offset="500"></a-timeline-animation>
-      -->
     </a-timeline>
+
+
+
+
+
+
+
 
     <a-mixin id="box"
       geometry="primitive: box"
@@ -425,16 +329,20 @@
         animation__toggleblue="property: material.color; from: #0072ff; to: #01deff; dur: 500; autoplay: false"
         animation__togglelightblue="property: material.color; from: #01deff; to: #0072ff; dur: 800; autoplay: false"
         animation__toggleblack="property: material.color; from: #FFFFFF; to: #000000; dur: 800; autoplay: false"
+        animation__togglewhite="property: material.color; from: #000000; to: #FFFFFF; dur: 3000; autoplay: false"
+
+        animation__togglefinished="property: begingame; to: true;"
+
       visible="false"></a-mixin> 
 
   </a-assets>
 
 
 
-
+<!--
 <a-sphere id="sphere1" mixin="sphere" color="#F44336" radius="1" position="-4 2 0" init-anim="anim2" material="src: #texture1"></a-sphere>
 <a-sphere id="sphere2" mixin="sphere" color="#FFEB3B" radius="1" position="4 2 0" init-anim="anim1" material="src: #texture2"></a-sphere>
-
+-->
 
 
 <a-entity id="text1" mixin="text" text="value: LINK START"></a-entity>
@@ -547,7 +455,8 @@ text="value:Welcome to" visible="true" material="color:#0000FF">
 
 
 <a-text id="txtWelcome1" mixin="txtlang" position="-1.458 2.846 1" align="left" anchor="left" width="5" 
-value="Sword Art Online" font="fonts/SAO.fnt" fontImage="fonts/SAO.png" scale="2.338 1.885 1" visible="true" material="color:#000000">
+value="Sword Art Online" font="fonts/SAO.fnt" fontImage="fonts/SAO.png" scale="2.338 1.885 1" visible="true" material="color:#000000"
+begingame="false">
 </a-text> 
 
 
@@ -564,8 +473,33 @@ value="Sword Art Online" font="fonts/SAO.fnt" fontImage="fonts/SAO.png" scale="2
   <a-sky id="sky" color="#111111" 
       animation__color="property: material.color; from: #111111; to: #FFFFFF; dur: 1000; autoplay: false"
       animation__color2="property: material.color; from: #FFFFFF; to: #111111; dur: 2000; autoplay: false"
+      animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+      animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
       ></a-sky>
 
+
+
+    <a-assets>
+        <img id="skyday" src="assets/images/sky.jpg">
+        <a-asset-item id="3dalley" src="assets/models/medieval_alley/scene.gltf"></a-asset-item>
+
+      </a-assets>
+
+    <a-sky id="sky2" src="#skyday"
+        animation__togglevisible="property: visible; from: false; to: true; dur: 400; autoplay: false"
+        animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"></a-sky>
+
+
+    <!-- Plano del piso -->
+   <!-- <a-plane position="0 0 0" rotation="-90 0 0" width="40" height="40" 
+               material="src: http://i.imgur.com/fZ2FBCF.jpg; repeat: 30 30"></a-plane> -->
+
+    <!-- Modelo del alley -->
+    <a-entity id="town01" gltf-model="#3dalley" scale="0.05 0.05 0.05" visible="false"
+        animation__fadein="property: material.opacity; from: 0; to: 1; dur: 10; easing: linear; autoplay: false"
+        animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+        animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+        ></a-entity>
 
 </a-scene>
       
