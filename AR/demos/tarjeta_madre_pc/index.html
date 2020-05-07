@@ -1,21 +1,77 @@
 <html>
 	<head>
-		<!-- include A-Frame obviously -->
-		<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
-		<!-- include ar.js for A-Frame -->
-		<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
-	</head>
+		<!-- include A-Frame obviously 
+		<script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>  -->
+		<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
+		<!-- include ar.js for A-Frame  -->
+		<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+
+		<style>
+			.arjs-loader {
+			  height: 100%;
+			  width: 100%;
+			  position: absolute;
+			  top: 0;
+			  left: 0;
+			  background-color: rgba(0, 0, 0, 0.8);
+			  z-index: 9999;
+			  display: flex;
+			  justify-content: center;
+			  align-items: center;
+			}
+		  
+			.arjs-loader div {
+			  text-align: center;
+			  font-size: 1.25em;
+			  color: white;
+			}
+		  </style>
+
+	</head>
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs
-		   vr-mode-ui="enabled: false;">
-    <!-- create your content here. just a box for now -->
-    <!-- <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box> -->
 	
-	<a-image src="img/img1.jpeg" rotation="90 0 0"></a-image>
+
+
+ <a-scene embedded arjs
+			vr-mode-ui="enabled: false;"
+			renderer="logarithmicDepthBuffer: true;"
+		 > 
+   <!-- <a-scene> -->
+	<a-assets>
+        <a-asset-item id="why-male-models" src="https://cdn.glitch.com/0d2b2391-ffd0-4126-8ecf-62e2d1ffed58%2Fman.dae?1500950122741"></a-asset-item>
+        <a-asset-item id="iglesia-models" src="https://cdn.glitch.com/0d2b2391-ffd0-4126-8ecf-62e2d1ffed58%2Figlesia.dae?1500996153240"></a-asset-item>
+		<a-asset-item id="tree" src="./assets/motherboard/scene.gltf"></a-asset-item>
+	</a-assets>
+
+	<!-- Modelo 3d motherboard -->
+	<a-marker type='pattern' url="pattern/pattern-01.patt">
+		<a-image src="img/img1.jpeg" rotation="90 0 0"></a-image>
+	</a-marker> 
+
+
+	<a-marker type='pattern' url="pattern/pattern-02.patt" >
+		<!-- Modelo 3d motherboard -->
+		<a-entity gltf-model="#tree" scale="0.3 0.3 0.3" position="0 1.246 0" rotation="-90.000 179.600 0"></a-entity>
+	</a-marker>
+
+
+	<a-marker type='pattern' url="pattern/pattern-03.patt">
+		<a-image src="img/img2.jpeg" rotation="90 0 0"></a-image>
+	</a-marker> 
+
+
+
 	
     <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
+	<!-- <a-marker-camera preset='hiro'></a-marker-camera> -->
+
+
+	<!-- use this <a-entity camera> to support multiple-markers, otherwise use <a-marker-camera> instead of </a-marker> -->
+     <a-entity camera></a-entity> 
+	
+
+	<!-- <a-sky src="http://i.imgur.com/YGTjUlg.jpg"></a-sky>  -->
 	
   </a-scene>
 </body>
