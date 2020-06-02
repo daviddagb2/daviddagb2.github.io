@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1591069061
+#1591120207
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -7,6 +7,10 @@ images/baseplatform.png
 images/playera-sheet0.png
 images/playerb-sheet0.png
 images/gameoverzone.png
+images/punchbullet-sheet0.png
+images/punchbullet-sheet1.png
+media/astronomy_normal.m4a
+media/astronomy_normal.ogg
 icon-16.png
 icon-32.png
 icon-114.png
