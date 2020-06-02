@@ -1,9 +1,10 @@
 ﻿CACHE MANIFEST
-#1591120207
+#1591125605
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
 images/baseplatform.png
+images/tileblock1-sheet0.png
 images/playera-sheet0.png
 images/playerb-sheet0.png
 images/gameoverzone.png
