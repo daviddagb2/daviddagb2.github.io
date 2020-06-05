@@ -9,9 +9,7 @@
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.ico">
 
-    <title>Gonzalez Blanchard</title>
-	
-	
+    <title>Test Widget Gold</title>	
 
     <!-- Bootstrap core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -33,37 +31,39 @@
   </head>
 
  <body class="is-preload">
- 
-	<div class="container">
-		<div class="col-md-12">
-			Proyectos
-		</div>
-		
-		<div class="col-md-6">
-			Proyectos
-		</div>
-		
-		
-	</div>
 
 		<!-- Wrapper -->
 			<div id="wrapper">
 
-				<!-- Main -->
-					<section id="main">
-						<header>
-							<span class="avatar"><img src="images/davidgb.jpg" alt="David" /></span>
-							<h1>David Gonzalez</h1>
-							<p>Systems Engineer</p>
-						</header>
-
-						<footer>
-							<ul class="icons">
-								<li><a target="_blank" href="https://twitter.com/daviddagbx" class="icon brands fa-twitter">Twitter</a></li>
-								<li><a target="_blank" href="https://www.instagram.com/daviddagb2/" class="icon brands fa-instagram">Instagram</a></li>
-								<li><a target="_blank" href="https://github.com/daviddagb2" class="icon brands fa-github">Github</a></li>
-							</ul>
-				</footer>
+			<!-- Main -->
+			<section id="main"  style="width: 900px;height: 700px;">
+				<!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container">
+				  <div id="tradingview_85378"></div>
+				  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+				  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+				  <script type="text/javascript">
+				  new TradingView.widget(
+				  {
+				
+				  "height": 610,
+				  "symbol": "NASDAQ:AAPL",
+				  "interval": "3",
+				  "timezone": "Etc/UTC",
+				  "theme": "light",
+				  "style": "1",
+				  "locale": "en",
+				  "toolbar_bg": "#f1f3f6",
+				  "enable_publishing": true,
+				  "withdateranges": true,
+				  "allow_symbol_change": true,
+				  "calendar": true,
+				  "container_id": "tradingview_85378"
+				}
+				  );
+				  </script>
+				</div>
+				<!-- TradingView Widget END -->
 			</section>
 
 			<!-- Footer -->
