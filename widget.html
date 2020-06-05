@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="img/favicon.ico">
+
+    <title>Test Widget Gold</title>	
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <!--<link href="css/stylewebsite.css" rel="stylesheet"> -->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	
+	<link rel="stylesheet" href="assets/css/main.css" />
+	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+  </head>
+
+ <body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+			<!-- Main -->
+			<section id="main"  style="width: 900px;height: 700px;">
+				<!-- TradingView Widget BEGIN -->
+				<div class="tradingview-widget-container">
+				  <div id="tradingview_85378"></div>
+				  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> by TradingView</div>
+				  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+				  <script type="text/javascript">
+				  new TradingView.widget(
+				  {
+				
+				  "height": 610,
+				  "symbol": "NASDAQ:AAPL",
+				  "interval": "3",
+				  "timezone": "Etc/UTC",
+				  "theme": "light",
+				  "style": "1",
+				  "locale": "en",
+				  "toolbar_bg": "#f1f3f6",
+				  "enable_publishing": true,
+				  "withdateranges": true,
+				  "allow_symbol_change": true,
+				  "calendar": true,
+				  "container_id": "tradingview_85378"
+				}
+				  );
+				  </script>
+				</div>
+				<!-- TradingView Widget END -->
+			</section>
+
+			<!-- Footer -->
+			<footer id="footer">
+				<ul class="copyright">
+					<li>&copy; Gonzalez Blanchard</li>
+				</ul>
+			</footer>
+		</div>
+
+		<!-- Scripts -->
+		<script>
+			if ('addEventListener' in window) {
+				window.addEventListener('load', function() { document.body.className = document.body.className.replace(/\bis-preload\b/, ''); });
+				document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
+			}
+		</script>
+	</body>
+</html>
