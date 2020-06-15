@@ -1,5 +1,5 @@
 ﻿CACHE MANIFEST
-#1592159904
+#1592187356
 data.js
 c2runtime.js
 jquery-2.1.1.min.js
@@ -29,6 +29,7 @@ images/explosion2-sheet0.png
 images/explosion2-sheet1.png
 images/explosion2-sheet2.png
 images/explosion3-sheet0.png
+images/bgwall.png
 media/sx_plr_cordo_lose.m4a
 media/sx_plr_cordo_lose.ogg
 media/sx_plr_cordo_damaged_01.m4a
@@ -125,6 +126,8 @@ media/sx_ui_menu_characterselectfinal.m4a
 media/sx_ui_menu_characterselectfinal.ogg
 media/sx_ui_menu_hover.m4a
 media/sx_ui_menu_hover.ogg
+media/sx_ui_menu_pressanybutton.m4a
+media/sx_ui_menu_pressanybutton.ogg
 media/astronomy_normal.m4a
 media/astronomy_normal.ogg
 media/in%20the%20search%20of%20the%20third%20-%20main%20theme.ogg
